@@ -1,0 +1,13 @@
+{% extends "MyApp/index.html" %}
+{% block content %}
+<a>Today's weather</a>
+<ul>
+    <img src="https://openweathermap.org/img/w/{{ icon }}.png" class="weather" alt="">
+<li>Temperature:{{ main.temp }}</li>
+<li>Feels like:{{ main.feels_like }}</li>
+<li>Minimum temperature:{{ main.temp_min }}</li>
+<li>Maximum temperature:{{ main.temp_max }}</li>
+<li>Pressure:{{ main.pressure }}</li>
+<li>humidity:{{ main.humidity }}</li>
+</ul>
+{% endblock %}

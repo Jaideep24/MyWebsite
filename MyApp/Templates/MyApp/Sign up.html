@@ -1,0 +1,15 @@
+{% extends "MyApp/index.html" %}
+{% load static %}
+{% block content %}
+<h1>Sign up</h1>
+<center>
+    {% if user.is_authenticated %}
+    <p>Welcome, {{ email }}</p>
+    {% endif %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+</form>
+</center>
+{% endblock %}

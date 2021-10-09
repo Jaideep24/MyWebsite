@@ -1,0 +1,214 @@
+{% load static %}
+<!doctype html>
+<!--comment-->
+<html>
+  <head>
+    <title>
+      Mumbai's Top Amusement Parks
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+<link href="{% static 'css/style.css' %}">
+    
+   <style>h1{
+    font: 3em sans-serif;
+    color: darkgoldenrod;
+    background-color: darksalmon;
+    margin: 10px;
+    padding: 40px;
+}
+.nav2{
+  overflow: hidden;
+  
+}
+body{
+    background-color: greenyellow;
+    font-family:"Roboto";
+}
+img{
+    width: 341px;
+    height: 341px;
+    position: relative;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-size: 1.5em;
+    margin: 5px;
+    padding: 5px;
+
+}
+a:hover{
+    color: white;
+    background-color: chartreuse;
+}
+
+
+.Main {
+    padding-left: 24px;
+    height: 69px;
+    overflow: hidden;
+}
+.Main:hover{
+    height: 1000px ;
+    transition-duration: 1s;
+}
+
+
+
+.Navigation{
+    position: fixed;
+    padding: 10px;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    background-color: deepskyblue;
+    opacity: 0.8;
+    width: 120px;
+    height: 80px;
+}
+.Navigation:hover{
+    width: 610px;
+    transition: 2s;
+}
+.Imagica{
+    font: 3em sans-serif;
+    color: darkgoldenrod;
+    background-color: darksalmon;
+    margin: 10px;
+    padding: 40px;
+}
+.rides{
+    width: 60%;
+    height: 56px;
+    font-size: 2em;
+    overflow: hidden;
+}
+.rides:hover{
+    width: 98%;
+    transition: 0.4s;
+}
+@keyframes weather_animation{
+  from{bottom:5%;}
+  to{bottom: 30%;}
+}
+.weather{
+  width: 300px;
+  height: 50px;
+  position: fixed;
+  bottom: 5%;
+  overflow: hidden;
+  background-color: aqua;
+  z-index: 1;
+  opacity: 0.85;
+}
+.weather:hover{
+  animation: weather_animation;
+  height: 350px;
+  transition: 1s;
+  opacity: 1;
+}
+.weather_img{
+  width: 50px;
+  height: 50px;
+}
+@keyframes mymove{
+    from{left: -10%; opacity: 0;}
+    to{left: 0%; opacity: 1;}
+}</style>
+  </head>
+  
+  <body>
+      <div class="Navigation">
+        <nav class="navbar navbar-expand-xxl navbar-light bg-light " style="height: 60px;overflow: hidden;text-align: start;">
+          <div class="container-fluid nav2 d-grid gap-2 d-md-block">
+          <a class="btn btn-secondary" data-toggle="button" aria-pressed="false" href="#Home">Home</a>
+          <a class="btn btn-primary">Rides</a>
+          <a class="btn btn-success" href="#Conclusion">Conclusion</a>
+          <a class="btn btn-danger" href="#Contact">Contact</a>
+          <a class="btn btn-warning" href="/login">Login</a>
+          <a class="btn btn-info">More Parks</a>
+          </div>
+        </nav>
+      </div>
+      <div class="weather"><h3>Today's weather</h3>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid nav2 ">
+            <ul>
+              <li>
+        <form method="POST">
+          {% csrf_token %}
+          <h3>City name: </h3><input type="text" name="city">
+          <button class="btn btn-primary" type="submit">Submit</button></form>
+              </li>
+            <img src="https://openweathermap.org/img/w/{{ icon }}.png" class="weather_img" alt="">
+        <li>City:{{ name }}</li>
+        <li>Temperature:{{ main.temp }}</li>
+        <li>Feels like:{{ main.feels_like }}</li>
+        <li>Minimum temperature:{{ main.temp_min }}</li>
+        <li>Maximum temperature:{{ main.temp_max }}</li>
+        <li>Pressure:{{ main.pressure }}</li>
+        <li>humidity:{{ main.humidity }}</li>
+        </ul>
+          </div>
+        </nav>
+      </div>
+      {% block content %}
+    <h1 id="Home" align="center">TOP AMUSEMENT PARKS</h1>
+    <hr>
+    <p align="center">In this article you will see the top five amusement parks in Mumbai</p>
+    <div align="center">
+    <img  src="https://www.fabhotels.com/blog/wp-content/uploads/2018/08/7.jpg" width=500 height=325>
+    </img>
+    </div>
+    <br>
+  <h3>Mumbai and its outskirts happen to be one of the many tourist destinations of India, and most of them are the amusement parks, feeling the wind in your face, sliding into a pool of water, going up 60 feet in the air and that moment of weightlessness. All that and much more is going to be covered in this article of some of amusement parks in and around mumbai that are worth a visit.
+  </h3>
+  <br>
+  <br>
+  
+  <div align="center">
+ 
+  <a href="/1" align="center" class="rides btn btn-outline-info">1) Adlabs Imagica</a>
+ 
+  </div>
+  <br>
+  
+<div align="center">
+  
+  <a href="/2" class="rides btn btn-outline-success">2) Kidzania</a>
+  
+  </div>
+  <br>
+  
+<div align="center">
+  <a href="/3" class="rides  btn btn-outline-warning">3) Essel World</a>
+</div>
+  <br>
+  
+<div align="center">
+  <a href="/4" class="rides  btn btn-outline-primary">4)Water Kingdom</a>
+  </div>
+  <br>
+  
+  <div align="center">
+    <a href="/5" class="rides  btn btn-outline-secondary">5) Snow World</a>
+  </div>
+  
+  <br>
+<br>
+  <h2 id="Conclusion">Conclusion</h2>  
+  <p>In the end its safe to say that there is no shortage of fun in the busy city of Mumbai, the amusement and theme parks mentioned in this article are just a fraction of the lot. Theres probably enough to visit a new park every month for two years and still be left with unvisited ones.</p>
+  {% endblock %}
+  <footer>
+  <h5 id="Contact"><a href="mailto: taskmaster2404@gmail.com">Contact</a></h5>
+  </footer>
+</body>
+</html>

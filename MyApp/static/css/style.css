@@ -1,0 +1,104 @@
+h1{
+    font: 3em sans-serif;
+    color: darkgoldenrod;
+    background-color: darksalmon;
+    margin: 10px;
+    padding: 40px;
+}
+body{
+    background-color: greenyellow;
+    font-family:"Roboto";
+}
+img{
+    width: 341px;
+    height: 341px;
+    position: relative;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-size: 1.5em;
+    margin: 5px;
+    padding: 5px;
+
+}
+a:hover{
+    color: white;
+    background-color: chartreuse;
+}
+
+
+.Main {
+    padding-left: 24px;
+    height: 69px;
+    overflow: hidden;
+}
+.Main:hover{
+    height: 1000px ;
+    transition-duration: 1s;
+}
+
+
+
+.Navigation{
+    position: fixed;
+    padding: 10px;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+    background-color: deepskyblue;
+    opacity: 0.8;
+    width: 100px;
+    height: 30px;
+}
+.Navigation:hover{
+    width: 700px;
+    transition: 2s;
+}
+.Imagica{
+    font: 3em sans-serif;
+    color: darkgoldenrod;
+    background-color: darksalmon;
+    margin: 10px;
+    padding: 40px;
+}
+.rides{
+    width: 60%;
+    height: 56px;
+    background-color: chocolate;
+    overflow: hidden;
+}
+.rides:hover{
+    width: 100%;
+    transition: 0.4s;
+}
+@keyframes weather_animation{
+  from{bottom:5%;}
+  to{bottom: 30%;}
+}
+.weather{
+  width: 300px;
+  height: 50px;
+  position: fixed;
+  bottom: 5%;
+  overflow: hidden;
+  background-color: aqua;
+  z-index: 1;
+  opacity: 0.85;
+}
+.weather:hover{
+  animation: weather_animation;
+  height: 350px;
+  transition: 1s;
+  opacity: 1;
+}
+.weather_img{
+  width: 50px;
+  height: 50px;
+}
+@keyframes mymove{
+    from{left: -10%; opacity: 0;}
+    to{left: 0%; opacity: 1;}
+}
