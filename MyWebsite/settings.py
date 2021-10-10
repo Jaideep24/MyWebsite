@@ -25,7 +25,7 @@ SECRET_KEY = 'u(k92mio9(dm)im6k%r4%gj9qbjj$x8(pixgsokwkmk9#u8a)c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','192.168.0.1']
+ALLOWED_HOSTS = ['jaideep.pythonanywhere.com']
 
 
 # Application definition
