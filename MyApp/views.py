@@ -66,27 +66,27 @@ def get_city(city_name):
     return(Weather_city.objects.all().last())
 def homepage(request):
     weather_data=main(request)
-    return(render(request, "MyApp\index.html", weather_data))
+    return(render(request, "MyApp/index.html", weather_data))
 def firstRide(request):
    weather_data=main(request)
-   return(render(request, "MyApp\Imagica.html", weather_data))
+   return(render(request, "MyApp/Imagica.html", weather_data))
 def secondRide(request):
     weather_data=main(request)
-    return(render(request, "MyApp\Kidzania.html", weather_data))
+    return(render(request, "MyApp/Kidzania.html", weather_data))
 def thirdRide(request):
     weather_data=main(request)
-    return(render(request, "MyApp\Essel World.html", weather_data))
+    return(render(request, "MyApp/Essel World.html", weather_data))
 def fourthRide(request):
     weather_data=main(request)
-    return(render(request, "MyApp\Water Kingdom.html", weather_data))   
+    return(render(request, "MyApp/Water Kingdom.html", weather_data))   
 def fifthRide(request):
     weather_data=main(request)
-    return(render(request, "MyApp\Snow World.html", weather_data))
+    return(render(request, "MyApp/Snow World.html", weather_data))
 def login(request):
     weather_data=main(request)
     if weather_data["email"]==None:
         weather_data["form"]=Login_Form()
-        return(render(request, "MyApp\Login.html", weather_data))
+        return(render(request, "MyApp/Login.html", weather_data))
     elif weather_data["email"]=="Anonymous":
         weather_data["form"]=Sign_Up_Form()
         return(redirect("signup"))
@@ -98,7 +98,7 @@ def sign_up(request):
     print(weather_data["email"])
     if weather_data["email"]==None:
         weather_data["form"]=Sign_Up_Form()
-        return(render(request, "MyApp\Sign up.html", weather_data))
+        return(render(request, "MyApp/Sign up.html", weather_data))
     else:
         weather_data["form"]=Login_Form()
         print("I am iron man")
